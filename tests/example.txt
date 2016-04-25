@@ -1,0 +1,37 @@
+from pymake import *
+
+@requires("test.py")
+@withrequires("pas%1.py")
+@pmk.make("noo*.py")
+def createnoo(main,other):
+    print(main)
+    print(other)
+
+@requires("test.py")
+@requires("rawr")
+@pmk.make("pasy*.py")
+def rump(main):
+    print(main)
+    #os.utime(main, None)
+
+@withrequires("noo*bo.py")
+@pmk.makemany("pas*.c%.txt")
+def bump(filenames,source):
+    print("huh")
+    with open(source) as f:
+        dat=f.read()
+        for c in dat:
+            fn=filenames.next()
+            print(fn)
+            with open(fn,'w') as o:
+                o.write(c)
+    
+@withrequires("rawr")
+@pmk.makestreams("pasol*.py")
+def rumpt(main,other):
+    print(main)
+    main.write(other.read())
+
+pmk.trigger("paso.c1.txt")
+
+#print(rumpt("paso.py"))

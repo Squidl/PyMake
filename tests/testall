@@ -1,0 +1,19 @@
+
+echo "
+>Testing base
+"
+cd base
+make
+cd ..
+echo "
+>Testing filepatterns
+"
+cd filepats
+make
+cd ..
+echo "
+>Testing manyfiles
+"
+cd manyfiles
+make
+cd ..

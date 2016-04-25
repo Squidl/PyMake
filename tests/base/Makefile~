@@ -1,0 +1,2 @@
+test:
+	PYTHONPATH=/path/to/stuff python test.py
